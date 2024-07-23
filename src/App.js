@@ -19,6 +19,12 @@ export default function Display(equation) {
     setOperation(e.target.value)
   };
 
+  const handleReset = () => {
+    setInput(0);
+    setInput1(0);
+    setOperation('+');
+  };
+
   const calculateEquation = () => {
     let answer;
     switch (operation) {
@@ -70,6 +76,7 @@ export default function Display(equation) {
 
       <h3>3. See the answer: </h3>
         {calculateEquation()}
+      <button id='reset' onClick={() => handleReset()}>Reset</button>
     </>
   );
 }
